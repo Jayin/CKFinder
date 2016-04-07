@@ -19,6 +19,22 @@ client_max_body_size 2m;
 LimitRequestBody 6550000
 ```
 
+Apache 文档：
+
+```
+LimitRequestBody Directive
+
+Description:	Restricts the total size of the HTTP request body sent from the client
+Syntax:	LimitRequestBody bytes
+Default:	LimitRequestBody 0 （默认是无限制）
+Context:	server config, virtual host, directory, .htaccess
+Override:	All
+Status:	Core
+Module:	core
+```
+
+`This directive specifies the number of bytes from 0 (meaning unlimited) to 2147483647 (2GB) that are allowed in a request body. `
+
 ### `php.ini`
 
 ```
