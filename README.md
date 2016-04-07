@@ -55,5 +55,14 @@ $config['resourceTypes'][] = array(
 );
 ```
 
+## 注意：权限
+
+一般部署出现`Not found XX file` 一般是服务器没有权限创建文件
+
+```
+# 給Apache权限
+$ chown -R www-data:www-data ./ckfinder  
+```
+
 
 
