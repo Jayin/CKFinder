@@ -689,6 +689,10 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
     color: white;
 }
 
+.ckf-page .ckf-toolbar{
+  border: 0;
+}
+
 
 
 
