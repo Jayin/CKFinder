@@ -656,6 +656,13 @@ label.ckf-choose-resized-image-label {
   content:'';
   
 }
+.ckf-page .ckf-toolbar{
+  border-color: #38A2EC;
+}
+
+/*.ckf-page .ckf-toolbar .ui-btn-icon-notext:after {
+  zoom: 1.4;
+}*/
 /*====侧栏 END*/
 
 /*顶栏按钮*/
@@ -689,9 +696,6 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
     color: white;
 }
 
-.ckf-page .ckf-toolbar{
-  border-color: #38A2EC;
-}
 
 
 
