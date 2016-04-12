@@ -669,6 +669,7 @@ label.ckf-choose-resized-image-label {
 .ui-btn-icon-notext, .ui-header button.ui-btn.ui-btn-icon-notext, .ui-footer button.ui-btn.ui-btn-icon-notext {
     background-color: transparent;
     border: 0;
+    box-shadow: none;
 }
 
 button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-btn-icon-left.ui-corner-all {
