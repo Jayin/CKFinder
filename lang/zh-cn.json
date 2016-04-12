@@ -3,7 +3,7 @@
 	"dir": "ltr",
 	"langCode": "zh-cn",
 	"common": {
-		"abort": "Abort",
+		"abort": "中止",
 		"cancel": "取消",
 		"choose": "选择",
 		"close": "关闭",
@@ -35,7 +35,7 @@
 		"mb": "{size} MB",
 		"gb": "{size} GB",
 		"sizePerSecond": "{size}/s",
-		"pixelShort": "px"
+		"pixelShort": "像数"
 	},
 	"files": {
 		"autoRename": "给重名文件自动命名",
@@ -45,8 +45,8 @@
 		"fileDeleteConfirmation": "您确定要删除文件 \"{name}\" 吗?",
 		"fileRenameExtensionConfirmation": "如果改变文件扩展名，可能会导致文件不可用。\r\n确定要更改吗？",
 		"fileRenameLabel": "请输入新文件名: ",
-		"filesPaneTitle": "Files pane",
-		"filesRefresh": "Refreshing files",
+		"filesPaneTitle": "文件窗口",
+		"filesRefresh": "刷新文件",
 		"filterPlaceholder": "过滤",
 		"gettingFileData": "正在获取文件数据，{pleaseWait}",
 		"overwrite": "自动覆盖重名文件",
@@ -68,8 +68,8 @@
 		"destinationFolder": "目标文件夹",
 		"newNameLabel": "请输入新文件夹名称: ",
 		"newSubfolder": "创建子文件夹",
-		"renameDialogTitle": "Rename Folder",
-		"treeTitle": "Folders tree"
+		"renameDialogTitle": "重命名文件夹",
+		"treeTitle": "文件夹目录"
 	},
 	"copy": {
 		"dropMenuItem": "将文件复制至此",
@@ -108,15 +108,15 @@
 		"displayDate": "日期",
 		"displayName": "文件名",
 		"displaySize": "大小",
-		"sortAscending": "Ascending",
-		"sortBy": "Sort by",
-		"sortByOrder": "Order",
-		"sortDescending": "Descending",
+		"sortAscending": "升序",
+		"sortBy": "排序",
+		"sortByOrder": "排序顺序",
+		"sortDescending": "降序",
 		"thumbnailSize": "缩略图大小",
 		"title": "设置",
-		"viewType": "View",
-		"viewTypeList": "List",
-		"viewTypeThumbnails": "Thumbnails"
+		"viewType": "视图",
+		"viewTypeList": "列表",
+		"viewTypeThumbnails": "缩略图"
 	},
 	"errors": {
 		"codes": {
@@ -150,7 +150,7 @@
 			"501": "不支持缩略图方式。"
 		},
 		"fileInvalidCharacters": "文件名不能包含以下字符：{disallowedCharacters}",
-		"fileNameNotEmpty": "The file name cannot be empty.",
+		"fileNameNotEmpty": "文件名不能为空.",
 		"folderInvalidCharacters": "文件夹名称不能包含以下字符：{disallowedCharacters}",
 		"incorrectExtension": "此文件扩展名在当前文件夹中不可用。",
 		"missingFile": "请求的文件已不可用。",
@@ -176,7 +176,7 @@
 	"editImage": {
 		"adjust": "调整",
 		"apply": "应用",
-		"confirmExit": "Are you sure you want to close? You have unsaved changes to the image.",
+		"confirmExit": "确定关闭？你会丢失未保存的图片",
 		"crop": "裁剪",
 		"downloadAction": "正在下载原始图像...",
 		"keepAspectRatio": "保持纵横比",
