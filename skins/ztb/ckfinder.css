@@ -231,7 +231,8 @@ legend, .ui-input-text input, .ui-input-search input {
 }
 
 .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
-  background-color: #e9e9e9;
+  /*background-color: #e9e9e9;*/
+  background-color: #38a2ec;
   border-color: #9e9e9e;
   color: #333;
   text-shadow: 0 1px 0 #eee;
@@ -288,14 +289,14 @@ legend, .ui-input-text input, .ui-input-search input {
   text-shadow: 0 1px 0 #f3f3f3;
   color: #333;
   border: 1px solid #b6b6b6;
-  background: #fff;
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNGU0ZTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top, #fff 0, #e4e4e4 100%);
+  background: #f7f7f7;
+  /*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNGU0ZTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);*/
+  /*background: -moz-linear-gradient(top, #fff 0, #e4e4e4 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(100%, #e4e4e4));
   background: -webkit-linear-gradient(top, #fff 0, #e4e4e4 100%);
   background: -o-linear-gradient(top, #fff 0, #e4e4e4 100%);
   background: -ms-linear-gradient(top, #fff 0, #e4e4e4 100%);
-  background: linear-gradient(to bottom, #fff 0, #e4e4e4 100%)
+  background: linear-gradient(to bottom, #fff 0, #e4e4e4 100%)*/
 }
 
 .ui-page-theme-a .ui-btn:hover, html .ui-bar-a .ui-btn:hover, html .ui-body-a .ui-btn:hover, html body .ui-group-theme-a .ui-btn:hover, html head+body .ui-btn.ui-btn-a:hover {
@@ -303,14 +304,14 @@ legend, .ui-input-text input, .ui-input-search input {
   color: #333;
   text-shadow: 0 1px 0 #f3f3f3;
   border-color: #9e9e9e;
-  background: #f2f2f2;
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YyZjJmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjY2NjY2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: #f7f2f2;
+  /*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YyZjJmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjY2NjY2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
   background: -moz-linear-gradient(top, #f2f2f2 0, #ccc 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f2f2f2), color-stop(100%, #ccc));
   background: -webkit-linear-gradient(top, #f2f2f2 0, #ccc 100%);
   background: -o-linear-gradient(top, #f2f2f2 0, #ccc 100%);
   background: -ms-linear-gradient(top, #f2f2f2 0, #ccc 100%);
-  background: linear-gradient(to bottom, #f2f2f2 0, #ccc 100%)
+  background: linear-gradient(to bottom, #f2f2f2 0, #ccc 100%)*/
 }
 
 .ui-page-theme-a .ui-btn:active, html .ui-bar-a .ui-btn:active, html .ui-body-a .ui-btn:active, html body .ui-group-theme-a .ui-btn:active, html head+body .ui-btn.ui-btn-a:active {
@@ -604,3 +605,71 @@ label.ckf-choose-resized-image-label {
 .ckf-files-list-view td.ckf-files-list-view-col-name a:not(.ui-btn-active):hover {
   background: #eee none
 }
+/* ============= 以下是自定义==============*/
+/*侧栏*/
+.ckf-panel-scrollable.ckf-panel-left.ui-panel.ui-panel-position-left.ui-panel-display-push.ui-body-a.ui-panel-fixed.ckf-folders-panel.ckf-folders-panel-default {
+    border: 0;
+}
+.ckf-folders-panel .ckf-panel-contents{
+  background-color: #2e333a;
+}
+/*侧栏下拉按钮*/
+.ckf-folders-panel .ckf-panel-contents .ui-listview a.ckf-folders-tree-expander.ui-btn {
+  background-color: #2E333A;
+  color: white;
+  border-left: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.57);
+  border-color: #9e9e9e;
+  border: 0;
+    
+}
+/*文件夹*/
+.ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label{
+  background-color: #2E333A;
+  color: #dee0e6;
+  font-weight: normal;
+  border-color: #9e9e9e;
+  text-shadow: none;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAABICAIAAABwTOKsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDphYmVjNGJhNC04YmZiLTc1NDEtOGQ2My0wZTliMDIyOWUzZWQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjU1QzY1QTNGODIxMTFFNUExMUFGMUYyOUFGNDcwNTIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjU1QzY1QTJGODIxMTFFNUExMUFGMUYyOUFGNDcwNTIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjY5ZmI5NDMtZWViMy04NDQxLTg2ZjgtZDYxOWI4MmQwNjQwIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZGE0ZjUyNGUtZmNiMS0xMWU1LTkxNWYtZmQyYjMwZGUxM2QxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+OCjj/AAAAERJREFUeNpi1DWyZGBgYGRkZCAOMDGQCEY1jGoY1TCqYVTDqIZRDaMaRjWMahjVMKph8GhgFBQWo60NLGY2zrS1ASDAALVCAhtPNcVWAAAAAElFTkSuQmCC);
+  border: 0;
+  background-position: 0 100%;
+  background-repeat: repeat-x;   
+}
+/*文件夹选中时*/
+.ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label.ui-btn.ui-btn-active{
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAABICAIAAABjm6JYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDphYmVjNGJhNC04YmZiLTc1NDEtOGQ2My0wZTliMDIyOWUzZWQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjhCOUVBRDhGN0Q2MTFFNUExMUFGMUYyOUFGNDcwNTIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjhCOUVBRDdGN0Q2MTFFNUExMUFGMUYyOUFGNDcwNTIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjY5ZmI5NDMtZWViMy04NDQxLTg2ZjgtZDYxOWI4MmQwNjQwIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZGE0ZjUyNGUtZmNiMS0xMWU1LTkxNWYtZmQyYjMwZGUxM2QxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+DPcPsAAAAElJREFUeNrszrEJwCAAAEEVFwiCtWBrbZXO/XdyCQuF+wGOj62PcKIUDgUCgUAgEAgEAoFAIBAIBAK9BcWv1LuO8vzXXUdbgAEAaSkB75auHX0AAAAASUVORK5CYII=);
+}
+/*文件图标*/
+.ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label:before{
+  zoom: 0.7;
+  margin-right: 4px;
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCOEI5RUFDRkY3RDYxMUU1QTExQUYxRjI5QUY0NzA1MiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCOEI5RUFEMEY3RDYxMUU1QTExQUYxRjI5QUY0NzA1MiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAxQTJERUU2RjdENTExRTVBMTFBRjFGMjlBRjQ3MDUyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkI4QjlFQUNFRjdENjExRTVBMTFBRjFGMjlBRjQ3MDUyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ALnqkQAAAMhJREFUeNpijImJYQACfSBeDcQCQPwFiBkZUMF/IGYBYi4g3gbEKUD8iwELYIHSIANVoWxRBvzAHIgVgfgmEDNDLWOAsn+DDPQF4gQG4oEUEJcA8XUgFoIaCPIRKxDfBxk4AYiVSDCQB+plbOApE5DgZKAeYAW5cCIQS4D8T6lhQPwKZOBkKOcPhQaywCJlCRDLUcnLz0AGmgGxNJUMlAVFymcqRspnJgYqg1EDqWMgFxXN4wSlw0tAzA0tB/+TaRAjtNC4DhBgAG21HOaB/TnyAAAAAElFTkSuQmCC);
+}
+.ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label.ckf-folders-tree-no-children:before{
+  content:'';
+  
+}
+
+/*顶栏按钮*/
+.ui-btn-icon-notext, .ui-header button.ui-btn.ui-btn-icon-notext, .ui-footer button.ui-btn.ui-btn-icon-notext {
+    background-color: transparent;
+    border: 0;
+}
+
+button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-btn-icon-left.ui-corner-all {
+    background: transparent;
+    border: 0;
+        color: white;
+    text-shadow: none;
+  
+}
+
+.ckf-files-view.ui-listview h2 {
+  /*文件列表：字体大小*/
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+
+
+
