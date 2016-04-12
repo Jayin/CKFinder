@@ -696,7 +696,12 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
     background-color: rgba(0, 0, 0, 0.43);
     color: white;
 }
-
+/*上传框*/
+.ckf-upload-dropzone .ckf-upload-dropzone-grid .ui-btn.ui-input-btn{
+  text-shadow: none;
+  background: #38a2ec;
+  color: white;
+}
 
 
 
