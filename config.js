@@ -12,4 +12,7 @@ var config = {};
 // config.skin = 'jquery-mobile';
 config.language = 'zh-cn';
 config.skin = 'ztb';
+config.plugins = [
+  'ztb'
+];
 CKFinder.define( config );
