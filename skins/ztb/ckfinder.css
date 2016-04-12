@@ -676,6 +676,12 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
   /*文件列表：字体大小*/
   font-size: 0.9em;
   font-weight: 600;
+  text-shadow: none;
+}
+
+.ckf-files-view.ui-listview p {
+  /*文件列表：描述*/
+  text-shadow: none;
 }
 
 
