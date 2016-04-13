@@ -3,6 +3,7 @@ const path = require('path')
 const uglify = require('gulp-uglify')
 const imagemin = require('gulp-imagemin')
 const nano = require('gulp-cssnano')
+const del = require('del')
 
 const DEST = './dist'
 
@@ -42,16 +43,24 @@ gulp.task('uglify:skins', ()=>{
 
 gulp.task('uglify', ['uglify:plugins', 'uglify:skins'])
 
-gulp.task('css:skins', ()=>{
-  return gulp.src(['./skins/**/*.css'])
+gulp.task('css:skins-core', ()=>{
+  return gulp.src(['./skins/core/**/*.css'])
     .pipe(nano({
        zindex: false
     }))
-    .pipe(gulp.dest(path.join(DEST, 'skins')))
+    .pipe(gulp.dest(path.join(DEST, 'skins', 'core')))
+})
+
+gulp.task('css:skins-ztb', ()=>{
+  return gulp.src(['./skins/ztb/**/*.css'])
+    .pipe(nano({
+       zindex: false
+    }))
+    .pipe(gulp.dest(path.join(DEST, 'skins', 'ztb')))
 })
 
 
-gulp.task('css', ['css:skins'])
+gulp.task('css', ['css:skins-core', 'css:skins-ztb'])
 
 
 gulp.task('imagemin:skins', ()=>{
@@ -62,4 +71,8 @@ gulp.task('imagemin:skins', ()=>{
 
 gulp.task('imagemin', ['imagemin:skins'])
 
-gulp.task('default', ['copy', 'uglify', 'css', 'imagemin'])
+gulp.task('clean-up', ['copy', 'uglify', 'css', 'imagemin'], ()=>{
+  del([path.join(DEST, 'skins', 'moono')])
+})
+
+gulp.task('default', ['clean-up'])
