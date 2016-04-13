@@ -614,7 +614,8 @@ label.ckf-choose-resized-image-label {
   background-color: #2e333a;
 }
 /*侧栏下拉按钮*/
-.ckf-folders-panel .ckf-panel-contents .ui-listview a.ckf-folders-tree-expander.ui-btn {
+.ckf-folders-panel .ckf-panel-contents .ui-listview a.ckf-folders-tree-expander.ui-btn,
+#ckf-move-copy-content .ui-listview a.ckf-folders-tree-expander{
   /*z-index比左侧的文件夹项高就可以点击了*/
   z-index: 2000;
   height: 43px;
@@ -627,7 +628,10 @@ label.ckf-choose-resized-image-label {
     
 }
 /*文件夹*/
-.ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label{
+/*左侧栏的文件夹总列表*/
+.ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label,
+/*移动文件夹时的文件夹总列表*/
+#ckf-move-copy-content .ui-listview .ckf-folders-tree-label{
   z-index: 1000;
   background-color: #2E333A;
   color: #dee0e6;
@@ -647,7 +651,8 @@ label.ckf-choose-resized-image-label {
   background-repeat: repeat-x;   
 }
 /*文件图标*/
-.ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label:before{
+.ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label:before,
+#ckf-move-copy-content .ui-listview .ckf-folders-tree-label:before{
   zoom: 0.7;
   margin-right: 4px;
   content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCOEI5RUFDRkY3RDYxMUU1QTExQUYxRjI5QUY0NzA1MiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCOEI5RUFEMEY3RDYxMUU1QTExQUYxRjI5QUY0NzA1MiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAxQTJERUU2RjdENTExRTVBMTFBRjFGMjlBRjQ3MDUyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkI4QjlFQUNFRjdENjExRTVBMTFBRjFGMjlBRjQ3MDUyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ALnqkQAAAMhJREFUeNpijImJYQACfSBeDcQCQPwFiBkZUMF/IGYBYi4g3gbEKUD8iwELYIHSIANVoWxRBvzAHIgVgfgmEDNDLWOAsn+DDPQF4gQG4oEUEJcA8XUgFoIaCPIRKxDfBxk4AYiVSDCQB+plbOApE5DgZKAeYAW5cCIQS4D8T6lhQPwKZOBkKOcPhQaywCJlCRDLUcnLz0AGmgGxNJUMlAVFymcqRspnJgYqg1EDqWMgFxXN4wSlw0tAzA0tB/+TaRAjtNC4DhBgAG21HOaB/TnyAAAAAElFTkSuQmCC);
@@ -704,6 +709,11 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 }
 /*==预览*/
 .ckf-file-preview-root {
+    text-shadow: none;
+}
+/*== 移动文件 窗口*/
+.ckf-move-copy-dialog .ui-header{
+    color: white;
     text-shadow: none;
 }
 
