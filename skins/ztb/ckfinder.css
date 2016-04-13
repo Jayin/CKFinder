@@ -729,6 +729,19 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
     text-shadow: none;
 }
 
+/*右侧栏*/
+.ckf-panel-scrollable{
+  border: 0;
+}
+/*文件列表border*/
+.ckf-files-list.ui-listview{
+  border: 0;
+}
+/*文件列表上面的header border=0*/
+.ckf-page-regions.ui-content .ui-header{
+  border: 0;
+}
+
 
 
 
