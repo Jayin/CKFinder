@@ -23,7 +23,7 @@ gulp.task('copy:lang',()=>{
 })
 
 gulp.task('copy:indexs',()=>{
-   return gulp.src(['./ckfinder.html', 'ckfinder.js', 'config.js', 'config.php'])
+   return gulp.src(['./index.html', 'ckfinder.js', 'config.js', 'config.php'])
     .pipe(gulp.dest(DEST))
 })
 
