@@ -615,10 +615,10 @@ label.ckf-choose-resized-image-label {
 }
 /*侧栏下拉按钮*/
 .ckf-folders-panel .ckf-panel-contents .ui-listview a.ckf-folders-tree-expander.ui-btn,
-#ckf-move-copy-content .ui-listview a.ckf-folders-tree-expander{
+.ckf-move-copy-dialog .ui-listview a.ckf-folders-tree-expander{
   /*z-index比左侧的文件夹项高就可以点击了*/
-  z-index: 2000;
-  height: 43px;
+  z-index: 2000 !important; 
+  height: 40px !important;
   background-color: transparent;
   color: white;
   border-left: 0;
@@ -631,8 +631,8 @@ label.ckf-choose-resized-image-label {
 /*左侧栏的文件夹总列表*/
 .ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label,
 /*移动文件夹时的文件夹总列表*/
-#ckf-move-copy-content .ui-listview .ckf-folders-tree-label{
-  z-index: 1000;
+.ckf-move-copy-dialog .ui-listview .ckf-folders-tree-label{
+  z-index: 1000 !important;
   background-color: #2E333A;
   color: #dee0e6;
   font-weight: normal;
@@ -642,7 +642,7 @@ label.ckf-choose-resized-image-label {
   border: 0;
   background-position: 0 100%;
   background-repeat: repeat-x;   
-  margin-right: 0;
+  margin-right: 0 !important;
 }
 /*文件夹选中时*/
 .ckf-folders-panel .ckf-panel-contents .ui-listview .ckf-folders-tree-label.ui-btn.ui-btn-active{
@@ -713,6 +713,18 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 }
 /*== 移动文件 窗口*/
 .ckf-move-copy-dialog .ui-header{
+    color: white;
+    text-shadow: none;
+}
+/*== 顶栏返回按钮*/
+.ckf-move-copy-dialog .ui-btn-icon-notext,
+.ckf-move-copy-dialog .ui-btn:active,
+.ckf-move-copy-dialog .ui-btn:hover{
+    background: transparent;
+    border: 0;
+}
+/*== 编辑图片页*/
+.ckf-ei-page .ckf-toolbar{
     color: white;
     text-shadow: none;
 }
