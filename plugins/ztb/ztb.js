@@ -6,7 +6,7 @@ CKFinder.define(function() {
       finder.on('folder:selected', function(evt) {
         $('.ui-btn-active').next().click();
       });
-
+      //文件信息：日期和文件大小同一行显示
       finder.on('folder:getFiles:after', function(evt) {
         var $descs = $('.ckf-file-desc p');
         for (var i = 0; i < $descs.length; i++) {

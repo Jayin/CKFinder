@@ -680,7 +680,7 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 .ckf-files-view.ui-listview .ckf-file-desc h2 {
   /*文件列表：字体大小*/
   font-size: 1em;
-  font-weight: 600;
+  font-weight: normal;
   text-shadow: none;
 }
 
