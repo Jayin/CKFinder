@@ -664,10 +664,13 @@ label.ckf-choose-resized-image-label {
 .ckf-page .ckf-toolbar{
   border-color: #38A2EC;
 }
-
-/*.ckf-page .ckf-toolbar .ui-btn-icon-notext:after {
-  zoom: 1.4;
-}*/
+/*顶栏的图标放缩*/
+.ckf-page .ckf-toolbar .ui-btn-icon-notext:after {
+  zoom: 1.3 !important;
+}
+.ckf-panel-scrollable .ckf-toolbar-items .ui-btn-icon-notext:after{
+  zoom: 1.3 !important;
+}
 /*====侧栏 END*/
 
 /*顶栏按钮*/
