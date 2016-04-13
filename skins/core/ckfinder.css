@@ -2356,10 +2356,7 @@ lesshat-selector {
   -moz-background-clip: padding;
   border-radius: 5px;
   background-clip: padding-box;
-  background-image: -webkit-linear-gradient(top, #38A2EC 0%, #38A2EC 100%);
-  background-image: -moz-linear-gradient(top, #38A2EC 0%, #38A2EC 100%);
-  background-image: -o-linear-gradient(top, #38A2EC 0%, #38A2EC 100%);
-  background-image: linear-gradient(to bottom, #38A2EC 0%, #38A2EC 100%);
+  background-color: #38A2EC;
   -webkit-transition: all 100ms ease;
   -moz-transition: all 100ms ease;
   -o-transition: all 100ms ease;
