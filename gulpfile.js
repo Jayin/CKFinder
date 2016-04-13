@@ -44,7 +44,9 @@ gulp.task('uglify', ['uglify:plugins', 'uglify:skins'])
 
 gulp.task('css:skins', ()=>{
   return gulp.src(['./skins/**/*.css'])
-    .pipe(nano())
+    .pipe(nano({
+       zindex: false
+    }))
     .pipe(gulp.dest(path.join(DEST, 'skins')))
 })
 
