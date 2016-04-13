@@ -1,0 +1,1 @@
+CKFinder.define({config:function(n){return n.themeCSS="skins/ztb/ckfinder.css",n.iconsCSS="skins/ztb/icons.css",n},init:function(n){CKFinder.require(["jquery"],function(n){n("body").addClass("ui-alt-icon")})}});
