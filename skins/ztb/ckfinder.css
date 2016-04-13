@@ -688,16 +688,18 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
   
 }
 
-.ckf-files-view.ui-listview h2 {
+.ckf-files-view.ui-listview .ckf-file-desc h2 {
   /*文件列表：字体大小*/
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 600;
   text-shadow: none;
 }
 
-.ckf-files-view.ui-listview p {
+.ckf-files-view.ui-listview .ckf-file-desc p {
   /*文件列表：描述*/
   text-shadow: none;
+  color: #928F8F;
+  font-size: 0.8em;
 }
 
 .ckf-files-thumbs.ckf-files-view.ui-listview .ckf-file-desc{
