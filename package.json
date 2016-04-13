@@ -1,0 +1,25 @@
+{
+  "name": "ckfinder",
+  "version": "1.0.0",
+  "description": "http://docs.cksource.com/ckfinder3-php/quickstart.html",
+  "main": "ckfinder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jayin/CKFinder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jayin/CKFinder/issues"
+  },
+  "homepage": "https://github.com/Jayin/CKFinder#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-uglify": "^1.5.3"
+  }
+}
