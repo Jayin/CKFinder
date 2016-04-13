@@ -735,6 +735,10 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 .ckf-page-regions.ui-content .ui-header{
   border: 0;
 }
+/*下载框*/
+.ckf-upload-dropzone .ui-btn.ui-btn-icon-notext{
+  background-color: #38a2ec !important;
+}
 
 
 
