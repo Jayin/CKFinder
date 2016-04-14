@@ -710,6 +710,7 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
   text-shadow: none;
   background: #38a2ec;
   color: white;
+  border: 0;
 }
 /*==预览*/
 .ckf-file-preview-root {
