@@ -684,11 +684,21 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
   text-shadow: none;
 }
 
-.ckf-files-view.ui-listview .ckf-file-desc p {
+.ckf-files-view.ui-listview .ui-btn .ckf-file-desc p {
   /*文件列表：描述*/
   text-shadow: none;
   color: #928F8F;
   font-size: 0.8em;
+}
+/*选中时*/
+.ckf-files-view.ui-listview .ui-btn.ui-btn-active .ckf-file-desc p {
+  color: white;
+}
+/*PC时文件描述字体为白色*/
+@media (min-width: 768.1px){
+  .ckf-files-view.ui-listview .ui-btn .ckf-file-desc p {
+      color: white ;
+  }
 }
 
 .ckf-files-thumbs.ckf-files-view.ui-listview .ckf-file-desc{
