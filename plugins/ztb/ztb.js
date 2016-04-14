@@ -14,7 +14,9 @@ CKFinder.define(function() {
           var outerHTML = e.outerHTML;
           var innerHTML = e.innerHTML;
           var sp = innerHTML.split('<br>');
-          e.innerHTML = '<span class="jy-date">' + sp[0] + '</span><span class="jy-size" style="float: right;">' + sp[1] + '</span>';
+          if (sp.length === 2) {
+            e.innerHTML = '<span class="jy-date">' + sp[0] + '</span><span class="jy-size" style="float: right;">' + sp[1] + '</span>';
+          }
         }
       });
 
