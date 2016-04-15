@@ -1,5 +1,19 @@
 http://docs.cksource.com/ckfinder3-php/quickstart.html
 
+## 快速部署
+
+NOTE: 
+
+- `dist/`目录下就是打包后的ckfinder
+- `./index.html` 为开发环境下的ckfinder
+
+```
+$ cd path/to/ckfinder/dist/
+$ php -S 127.0.0.1:8081 -t ./
+```
+
+访问`http://localhost:8081/`
+
 
 ## 注意：
 - 服务器允许上传文件的大小  
