@@ -5,15 +5,19 @@ http://docs.cksource.com/ckfinder3-php/quickstart.html
 NOTE: 
 
 - `dist/`目录下就是打包后的ckfinder
-- `./index.html` 为开发环境下的ckfinder
+
+方法一：
 
 ```
-$ cd path/to/ckfinder/dist/
+$ cd path/to/dist/
 $ php -S 127.0.0.1:8081 -t ./
 ```
 
 访问`http://localhost:8081/`
 
+2. `dist/`放到apache/nginx 的www根目录
+
+访问： `http://your_domain:port/dist/index.html`
 
 ## 注意：
 - 服务器允许上传文件的大小  
