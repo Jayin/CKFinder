@@ -27,7 +27,12 @@ gulp.task('copy:indexs',()=>{
     .pipe(gulp.dest(DEST))
 })
 
-gulp.task('copy', ['copy:core', 'copy:libs', 'copy:lang', 'copy:indexs'])
+gulp.task('copy:README',()=>{
+   return gulp.src(['./README.md'])
+    .pipe(gulp.dest(DEST))
+})
+
+gulp.task('copy', ['copy:core', 'copy:libs', 'copy:lang', 'copy:indexs', 'copy:README'])
 
 gulp.task('uglify:plugins', ()=>{
   return gulp.src(['./plugins/**/*.js'])
