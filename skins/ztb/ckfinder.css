@@ -750,6 +750,24 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 .ckf-upload-dropzone .ui-btn.ui-btn-icon-notext{
   background-color: #38a2ec !important;
 }
+/*====== 顶部栏移到底部*/
+/*顶栏移动到底部*/
+.ckf-page.ckf-files-page .ui-header.ckf-toolbar {
+    bottom: 0px;
+    top: initial;
+}
+/*内容页:适配顶栏移动到底部*/
+.ckf-page.ckf-files-page.ui-page.ui-page-theme-a{
+  padding-top: 0px !important;
+  padding-bottom: 96px !important;
+}
+.ckf-toolbar-visible .ckf-folders-panel .ui-panel-inner{
+  padding-top: 0px !important;
+  padding-bottom: 42px !important; 
+}
+
+/*=== 顶部栏移到底部 END*/
+
 
 
 
