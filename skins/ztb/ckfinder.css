@@ -768,6 +768,10 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 
 /*=== 顶部栏移到底部 END*/
 
+/*文件列表上下边界的黑边*/
+.ckf-files-view-borders:before, .ckf-files-view-borders:after{
+  border-bottom-width: 0;
+}
 
 
 
