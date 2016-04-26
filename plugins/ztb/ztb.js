@@ -42,6 +42,11 @@ CKFinder.define(function() {
             $update_status.css('color', 'black');
           }
         });
+        
+        //底部兰 margin-rigth 0.3rem
+        // console.log($('.ui-header .ckf-toolbar-items button'))
+        $('.ui-header .ckf-toolbar-items button').css('margin-right', '0.3rem')
+        
       });
     }
   };
