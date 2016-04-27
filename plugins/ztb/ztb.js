@@ -42,12 +42,66 @@ CKFinder.define(function() {
             $update_status.css('color', 'black');
           }
         });
-        
-        //底部兰 margin-rigth 0.3rem
-        // console.log($('.ui-header .ckf-toolbar-items button'))
-        $('.ui-header .ckf-toolbar-items button').css('margin-right', '0.3rem')
-        
       });
+      
+      // => http://docs.cksource.com/ckfinder3/#!/api/CKFinder.Application-event-toolbar_reset_Main_resources
+      finder.on( 'toolbar:reset:Main:resources', function( evt ) {
+            updateToolbar(evt, ['Upload', 'View', 'Download', 'RenameFile', 'DeleteFiles'])
+            // console.log('toolbar:reset:Main:resources')
+            
+        }, this, null, 1000 );
+      //选中文件夹时  
+      finder.on( 'toolbar:reset:Main:folder', function( evt ) {
+            updateToolbar(evt, ['ShowFolders','Upload', 'CreateFolder', 'RenameFolder', 'DeleteFolder', 'Settings'])
+            // console.log('toolbar:reset:Main:folder')
+            
+        }, this, null, 1000 );
+      
+      //选中文件时的菜单选择
+      finder.on( 'toolbar:reset:Main:file', function( evt ) {
+            updateToolbar(evt, ['Upload', 'View', 'Download', 'RenameFile', 'DeleteFiles'])
+            // console.log('toolbar:reset:Main:file')
+            
+        }, this, null, 1000 );
+      // 选中多个文件时
+      finder.on( 'toolbar:reset:Main:files', function( evt ) {
+            updateToolbar(evt, ['Upload', 'View', 'Download','DeleteFiles'])
+            // console.log('toolbar:reset:Main:file')
+            
+        }, this, null, 1000 );
+      
+      function updateToolbar( evt , showToobarItems){
+            showToobarItems = showToobarItems || []
+            var toUpdate = [];
+
+            evt.data.toolbar.forEach( function( button, index, toolbar ) {
+              
+              button.set('alwaysVisible', false)
+
+              // button.attributes.
+              // button.set('attributes', {'style': 'margin-right: 0.9rem;'})
+              //添加自定义类
+              button.set('className', 'tollbar-item-margin')
+              
+              // console.log(button.get( 'name' ))
+              button.set('hidden', true)
+              // if ( button.get('name') == 'ShowFolders' || button.get('name') == 'Upload' || button.get('name') == 'View' || button.get('name') == 'Download' || button.get('name') == 'RenameFile' || button.get('name') == 'DeleteFiles') {
+              //     button.set('hidden', false)
+                  
+              // }
+              if(showToobarItems.indexOf(button.get('name')) !== -1){
+                 button.set('hidden', false)
+              }
+              toUpdate.push( button );
+            } );
+            
+
+            evt.data.toolbar.remove( toUpdate );
+            toUpdate.forEach(function(item){
+              evt.data.toolbar.push( item );  
+            })
+      }        
+        
     }
   };
 

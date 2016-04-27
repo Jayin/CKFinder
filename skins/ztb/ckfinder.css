@@ -652,10 +652,10 @@ label.ckf-choose-resized-image-label {
 }
 /*顶栏的图标放缩*/
 .ckf-page .ckf-toolbar .ui-btn-icon-notext:after {
-  zoom: 1.65 !important;
+  zoom: 1.8 !important;
 }
 .ckf-panel-scrollable .ckf-toolbar-items .ui-btn-icon-notext:after{
-  zoom: 1.5 !important;
+  zoom: 1.6 !important;
 }
 /*====侧栏 END*/
 
@@ -772,7 +772,9 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 .ckf-files-view-borders:before, .ckf-files-view-borders:after{
   border-bottom-width: 0;
 }
-
+.tollbar-item-margin{
+  margin-right: 0.9rem !important;
+}
 
 
 
