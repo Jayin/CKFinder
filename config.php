@@ -57,6 +57,17 @@ $config['backends'][] = array(
     'filesystemEncoding' => 'UTF-8',
 );
 
+//外置存储
+$config['backends'][] = array(
+    'name'         => 'backup',
+    'adapter'      => 'local',
+    'baseUrl'      => '/',
+    'root'         => '/mnt/backup', // Can be used to explicitly set the user files directory.
+    'chmodFiles'   => 0777,
+    'chmodFolders' => 0755,
+    'filesystemEncoding' => 'UTF-8',
+);
+
 /*================================ Resource Types =====================================*/
 
 $config['defaultResourceTypes'] = '';
@@ -78,6 +89,20 @@ $config['resourceTypes'][] = array(
     'deniedExtensions'  => '',
     'backend'           => 'default'
 );
+
+//外置存储
+if(file_exists('/mnt/backup')){
+    $config['resourceTypes'][] = array(
+        'name'              => '备份',
+        'directory'         => 'zkuploader',
+        'maxSize'           => 0,
+        'allowedExtensions' => '',
+        'deniedExtensions'  => '',
+        'backend'           => 'backup'
+    );
+}
+
+
 
 /*================================ Access Control =====================================*/
 
@@ -120,7 +145,9 @@ $config['debug'] = false;
 
 /*==================================== Plugins ========================================*/
 $config['pluginsDirectory'] = __DIR__ . '/plugins';
-$config['plugins'] = array();
+$config['plugins'] = array(
+    'Connectstatus'
+);
 
 /*================================ Cache settings =====================================*/
 $config['cache'] = array(
