@@ -1,13 +1,5 @@
 <?php
 
-/*
- * CKFinder Configuration File
- *
- * For the official documentation visit http://docs.cksource.com/ckfinder3-php/
- */
-
-/*============================ PHP Error Reporting ====================================*/
-// http://docs.cksource.com/ckfinder3-php/debugging.html
 
 // Production
 // error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
@@ -18,36 +10,29 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 /*============================ General Settings =======================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html
 
 $config = array();
 
 /*============================ Enable PHP Connector HERE ==============================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_authentication
 
 $config['authentication'] = function () {
     return true;
 };
 
 /*============================ License Key ============================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
+$config['licenseName'] = 'img.joinca.com';
+$config['licenseKey']  = 'S9C9-YHBK-41YE-V5MY-RA5J-Q52N-SJCK';
 
-$config['licenseName'] = '';
-$config['licenseKey']  = '';
-
-/*============================ CKFinder Internal Directory ============================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_privateDir
-
+/*============================  Internal Directory ============================*/
 $config['privateDir'] = array(
     'backend' => 'default',
-    'tags'   => '.ckfinder/tags',
-    'logs'   => '.ckfinder/logs',
-    'cache'  => '.ckfinder/cache',
-    'thumbs' => '.ckfinder/cache/thumbs',
+    'tags'   => 'zkuploader/tags',
+    'logs'   => 'zkuploader/logs',
+    'cache'  => 'zkuploader/cache',
+    'thumbs' => 'zkuploader/cache/thumbs',
 );
 
 /*============================ Images and Thumbnails ==================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_images
 
 $config['images'] = array(
     'maxWidth'  => 1600,
@@ -61,25 +46,23 @@ $config['images'] = array(
 );
 
 /*=================================== Backends ========================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_backends
 
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => '/ckfinder/userfiles/',
-//  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
+    'baseUrl'      => '/zkuploader/userfiles/',
+     'root'         => '', // Can be used to explicitly set the user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
 );
 
 /*================================ Resource Types =====================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_resourceTypes
 
 $config['defaultResourceTypes'] = '';
 
 $config['resourceTypes'][] = array(
-    'name'              => 'Files', // Single quotes not allowed.
+    'name'              => '文件', // Single quotes not allowed.
     'directory'         => 'files',
     'maxSize'           => 0,
     'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
@@ -88,7 +71,7 @@ $config['resourceTypes'][] = array(
 );
 
 $config['resourceTypes'][] = array(
-    'name'              => 'Images',
+    'name'              => '图片',
     'directory'         => 'images',
     'maxSize'           => 0,
     'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
@@ -97,11 +80,9 @@ $config['resourceTypes'][] = array(
 );
 
 /*================================ Access Control =====================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_roleSessionVar
 
-$config['roleSessionVar'] = 'CKFinder_UserRole';
+$config['roleSessionVar'] = 'ZKUploader_UserRole';
 
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_accessControl
 $config['accessControl'][] = array(
     'role'                => '*',
     'resourceType'        => '*',
@@ -123,7 +104,6 @@ $config['accessControl'][] = array(
 
 
 /*================================ Other Settings =====================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html
 
 $config['overwriteOnUpload'] = false;
 $config['checkDoubleExtension'] = true;
@@ -136,18 +116,13 @@ $config['hideFiles'] = array('.*');
 $config['forceAscii'] = false;
 $config['xSendfile'] = false;
 
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_debug
 $config['debug'] = false;
 
 /*==================================== Plugins ========================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_plugins
-
 $config['pluginsDirectory'] = __DIR__ . '/plugins';
 $config['plugins'] = array();
 
 /*================================ Cache settings =====================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_cache
-
 $config['cache'] = array(
     'imagePreview' => 24 * 3600,
     'thumbnails'   => 24 * 3600 * 365,
@@ -155,18 +130,12 @@ $config['cache'] = array(
 );
 
 /*============================ Temp Directory settings ================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_tempDirectory
-
 $config['tempDirectory'] = sys_get_temp_dir();
 
 /*============================ Session Cause Performance Issues =======================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_sessionWriteClose
-
 $config['sessionWriteClose'] = true;
 
 /*================================= CSRF protection ===================================*/
-// http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_csrfProtection
-
 $config['csrfProtection'] = true;
 
 /*============================== End of Configuration =================================*/

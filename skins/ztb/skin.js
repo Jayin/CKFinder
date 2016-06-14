@@ -1,4 +1,4 @@
-CKFinder.define( {
+ZKUploader.define( {
     config: function( config ) {
         // Use sample custom theme.
         config.themeCSS = 'skins/ztb/ckfinder.css';
@@ -10,7 +10,7 @@ CKFinder.define( {
     },
 
     init: function( finder ) {
-        CKFinder.require( [ 'jquery' ], function( jQuery ) {
+        ZKUploader.require( [ 'jquery' ], function( jQuery ) {
             // Enforce black iconset.
             jQuery( 'body' ).addClass( 'ui-alt-icon' );
         } );

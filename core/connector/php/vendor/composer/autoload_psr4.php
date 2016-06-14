@@ -18,5 +18,5 @@ return array(
     'League\\Flysystem\\Azure\\' => array($vendorDir . '/league/flysystem-azure/src'),
     'League\\Flysystem\\AwsS3v2\\' => array($vendorDir . '/league/flysystem-aws-s3-v2/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
-    'CKSource\\CKFinder\\Plugin\\' => array($vendorDir . '/cksource/ckfinder/plugins'),
+    'Joinca\\ZKUploader\\Plugin\\' => array($vendorDir . '/joinca/zkuploader/plugins'),
 );

@@ -1,4 +1,4 @@
-CKFinder.define(function() {
+ZKUploader.define(function() {
 
   var MyPlugin = {
     init: function(finder) {

@@ -11,6 +11,6 @@ return array(
     'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
     'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
     'Dropbox' => array($vendorDir . '/dropbox/dropbox-sdk/lib'),
-    'CKSource' => array($vendorDir . '/cksource/ckfinder/src'),
+    'Joinca' => array($vendorDir . '/joinca/zkuploader/src'),
     'Aws' => array($vendorDir . '/aws/aws-sdk-php/src'),
 );
