@@ -1,7 +1,7 @@
 ZKUploader.define( {
     config: function( config ) {
         // Use sample custom theme.
-        config.themeCSS = 'skins/ztb/ckfinder.css';
+        config.themeCSS = 'skins/ztb/zkuploader.css';
 
         // Use Moono skin icons.
         config.iconsCSS = 'skins/ztb/icons.css';
