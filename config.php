@@ -11,8 +11,10 @@ ini_set('display_errors', 1);
 
 //外接设备挂载目录
 define('EXTERNAL_FOLDER', '/mnt/sdb1');
+//备份的目录文件名名
+define('BACKUP_DIRECTORY', 'joinca_backup');
 //备份目录
-define('BACKUP_FOLDER', EXTERNAL_FOLDER.'/joinca_backup/'); //注意必须以/结尾
+define('BACKUP_FOLDER', EXTERNAL_FOLDER.'/'.BACKUP_DIRECTORY.'/'); //注意必须以/结尾
 
 /*============================ General Settings =======================================*/
 
@@ -99,7 +101,7 @@ $config['resourceTypes'][] = array(
 if(file_exists(EXTERNAL_FOLDER)){  //
     $config['resourceTypes'][] = array(
         'name'              => '移动存储', //请不要随意修改，受影响的文件有：plugins/backup/backup.js
-        'directory'         => 'zkuploader',
+        'directory'         => BACKUP_DIRECTORY,
         'maxSize'           => 0,
         'allowedExtensions' => '',
         'deniedExtensions'  => '',
