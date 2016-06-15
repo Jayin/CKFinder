@@ -1,4 +1,4 @@
-ZKUploader.define([ 'jquery' ],function($) {
+ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
 
     var BackupPlugin = {
         init: function(finder) {
@@ -131,8 +131,49 @@ ZKUploader.define([ 'jquery' ],function($) {
                 //确认后刷新
                 console.log('正在备份...')
                 //window.location.reload()
+                // finder.fire('Backup:getallfiles:success', ['a/b/1.jpg','a/2.jpg'])
                 finder.request( 'dialog:destroy' )
+                finder.request( 'loader:show', { text: '获取同步数据中...' } );
+                $.ajax({
+                  url: '/ckfinder/core/connector/php/connector.php?command=Getallfiles',
+                  type: 'GET',
+                  success: function(res){
+                    finder.fire('Backup:getallfiles:success', res)
+                    finder.request( 'loader:hide' );
+                  },
+                  error: function(){}
+                })
             } );
+            
+            finder.on('Backup:getallfiles:success', function(evt){
+                console.log('获取到的列表 '+evt.data)
+                var window._backup_cpfiles = evt.data || []
+
+                finder.request( 'dialog', {
+                    name: 'BackupfileDialog',
+                    title: '提示',
+                    template: '<div data-role="navbar" class="ckf-upload-dropzone ui-body-a ui-navbar" tabindex="20" role="navigation" style="border: 0;"><div class="ui-content"><div class="ckf-upload-dropzone-grid"><div class="ckf-upload-dropzone-grid-a"><p id="ckf-label-301" class="ckf-upload-status">正在上传:<span class="backup-file">foo.jpg</span></p><p class="ckf-upload-progress-text" style=""><span class="ckf-upload-progress-text-files">已上传文件：<span class="backup-finish">11</span>/<span class="backup-total">20</span></span></p></div></div><div id="ckf-upload-progress"><div class="ckf-progress"><div class="ckf-progress-message ckf-hidden"></div><div class="ckf-progress-wrap ckf-progress-ok" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><div class="ckf-progress-bar backup-progress" style="width: 0%;"></div></div></div></div></div></div>',
+                    //templateModel: templateModel,
+                    buttons: [ 'ok', 'cancel' ]
+                } );
+
+                console.log(Backbone.VERSION)
+
+                //var i = 1;
+                //setInterval(function(){
+                //
+                //    //var cur = templateModel.get('progress');
+                //    //console.log('==>'+cur);
+                //    //templateModel.set('progress', cur+1)
+                //    $('.ckf-progress-bar')[0].style.width = (i++) + '%';
+                //},1000)
+            });
+
+
+
+
+            
+            
 
         }
     };
