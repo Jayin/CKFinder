@@ -53,19 +53,19 @@ ZKUploader.define(function() {
       //选中文件夹时  
       finder.on( 'toolbar:reset:Main:folder', function( evt ) {
             updateToolbar(evt, ['ShowFolders','Upload', 'CreateFolder', 'RenameFolder', 'DeleteFolder', 'Settings'])
-            // console.log('toolbar:reset:Main:folder')
+            //console.log('toolbar:reset:Main:folder')
             
         }, this, null, 1000 );
       
       //选中文件时的菜单选择
       finder.on( 'toolbar:reset:Main:file', function( evt ) {
-            updateToolbar(evt, ['Upload', 'View', 'Download', 'RenameFile', 'DeleteFiles'])
+            updateToolbar(evt, ['Upload', 'View', 'Download', 'RenameFile', 'MoveFiles', 'DeleteFiles'])
             // console.log('toolbar:reset:Main:file')
             
         }, this, null, 1000 );
       // 选中多个文件时
       finder.on( 'toolbar:reset:Main:files', function( evt ) {
-            updateToolbar(evt, ['Upload', 'View', 'Download','DeleteFiles'])
+            updateToolbar(evt, ['Upload', 'View', 'Download', 'MoveFiles','DeleteFiles'])
             // console.log('toolbar:reset:Main:file')
             
         }, this, null, 1000 );
@@ -100,8 +100,7 @@ ZKUploader.define(function() {
             toUpdate.forEach(function(item){
               evt.data.toolbar.push( item );  
             })
-      }        
-        
+      }
     }
   };
 
