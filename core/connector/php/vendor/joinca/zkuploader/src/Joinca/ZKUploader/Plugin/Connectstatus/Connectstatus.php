@@ -16,9 +16,13 @@ use Joinca\ZKUploader\Plugin\PluginInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class Connectstatus
+ * API: http://you.donmain/ckfinder/core/connector/php/connector.php?command=Connectstatus
  *
  * Joinca 移动存储状态检测
+ *
+ * @return json
+ * {"status": "ok"}
+ *
  * @package Joinca\ZKUploader\Plugin\Connectstatus
  */
 class Connectstatus extends CommandAbstract implements PluginInterface{

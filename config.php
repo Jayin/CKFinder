@@ -12,7 +12,7 @@ ini_set('display_errors', 1);
 //外接设备挂载目录
 define('EXTERNAL_FOLDER', '/mnt/sdb1');
 //备份目录
-define('BACKUP_FOLDER', EXTERNAL_FOLDER.'/joinca_backup');
+define('BACKUP_FOLDER', EXTERNAL_FOLDER.'/joinca_backup/'); //注意必须以/结尾
 
 /*============================ General Settings =======================================*/
 
@@ -31,10 +31,10 @@ $config['licenseKey']  = 'S9C9-YHBK-41YE-V5MY-RA5J-Q52N-SJCK';
 /*============================  Internal Directory ============================*/
 $config['privateDir'] = array(
     'backend' => 'default',
-    'tags'   => 'zkuploader/tags',
-    'logs'   => 'zkuploader/logs',
-    'cache'  => 'zkuploader/cache',
-    'thumbs' => 'zkuploader/cache/thumbs',
+    'tags'   => '.zkuploader/tags', //使用 .zkuploader 文件夹来隐藏文件夹 ,
+    'logs'   => '.zkuploader/logs',
+    'cache'  => '.zkuploader/cache',
+    'thumbs' => '.zkuploader/cache/thumbs',
 );
 
 /*============================ Images and Thumbnails ==================================*/
@@ -56,7 +56,7 @@ $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
     'baseUrl'      => '/zkuploader/userfiles/',
-     'root'         => __DIR__.'/zkuploader/userfiles/',//当前目录下 // Can be used to explicitly set the user files directory.
+     'root'         => __DIR__.'/zkuploader/userfiles/',//当前目录下，//注意必须以/结尾 // Can be used to explicitly set the user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
@@ -151,7 +151,7 @@ $config['debug'] = false;
 /*==================================== Plugins ========================================*/
 $config['pluginsDirectory'] = __DIR__ . '/plugins';
 $config['plugins'] = array(
-    'Connectstatus'
+    'Connectstatus', 'Backupfile', 'Getallfiles'
 );
 
 /*================================ Cache settings =====================================*/
