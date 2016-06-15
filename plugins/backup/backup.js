@@ -1,4 +1,4 @@
-ZKUploader.define(function() {
+ZKUploader.define([ 'jquery' ],function($) {
 
     var BackupPlugin = {
         init: function(finder) {
