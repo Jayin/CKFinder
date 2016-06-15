@@ -9,6 +9,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+//外接设备挂载目录
+define('EXTERNAL_FOLDER', '/mnt/sdb1');
+//备份目录
+define('BACKUP_FOLDER', EXTERNAL_FOLDER.'/joinca_backup');
+
 /*============================ General Settings =======================================*/
 
 $config = array();
@@ -62,7 +67,7 @@ $config['backends'][] = array(
     'name'         => 'backup',
     'adapter'      => 'local',
     'baseUrl'      => '/',
-    'root'         => '/mnt/backup', // Can be used to explicitly set the user files directory.
+    'root'         => EXTERNAL_FOLDER, // Can be used to explicitly set the user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
@@ -91,9 +96,9 @@ $config['resourceTypes'][] = array(
 );
 
 //外置存储
-if(file_exists('/mnt/backup')){
+if(file_exists(EXTERNAL_FOLDER)){  //
     $config['resourceTypes'][] = array(
-        'name'              => '备份',
+        'name'              => '移动存储', //请不要随意修改，受影响的文件有：plugins/backup/backup.js
         'directory'         => 'zkuploader',
         'maxSize'           => 0,
         'allowedExtensions' => '',

@@ -15,6 +15,12 @@ use Joinca\ZKUploader\Filesystem\Folder\WorkingFolder;
 use Joinca\ZKUploader\Plugin\PluginInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class Connectstatus
+ *
+ * Joinca 移动存储状态检测
+ * @package Joinca\ZKUploader\Plugin\Connectstatus
+ */
 class Connectstatus extends CommandAbstract implements PluginInterface{
 
 
@@ -31,7 +37,7 @@ class Connectstatus extends CommandAbstract implements PluginInterface{
     public function execute(Request $request, Config $config) {
 
 
-        if(!file_exists('/mnt/backup')){
+        if(!file_exists(EXTERNAL_FOLDER)){
             return array('status' => 'faild');
         }
 
