@@ -20,7 +20,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
 
             finder.on('app:ready', function(evt) {
 
-                //==== 新增检测设备是否在
+                //==== 新增检测设备是否挂载
                 function check_connect_status(){
                     // 请求
                     $.ajax({
