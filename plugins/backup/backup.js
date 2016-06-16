@@ -40,8 +40,8 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                                finder.request( 'dialog:info', {
                                     name: 'CheckConnectStatusDialog',
                                     title: '提示',
-                                    msg: '发现移动存储已接入,立即刷新?',
-                                    buttons: [ 'ok', 'cancel' ]
+                                    msg: '发现移动存储设备已接入',
+                                    buttons: [ 'ok' ] //'cancel'
                                 });
                             }else{
                                 //检测到不存在backup目录
@@ -52,8 +52,8 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                                     finder.request( 'dialog:info', {
                                         name: 'CheckConnectStatusDialog',
                                         title: '提示',
-                                        msg: '移动存储已断开,立即刷新?',
-                                        buttons: [ 'ok', 'cancel' ]
+                                        msg: '移动存储设备已断开',
+                                        buttons: [ 'ok' ] //'cancel'
                                     });
                                }
                             }
