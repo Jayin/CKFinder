@@ -1,4 +1,5 @@
 ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
+    "use strict";
 
     var BackupPlugin = {
         init: function(finder) {
@@ -130,8 +131,6 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
             finder.on( 'dialog:ConfirmOnekeybackupDialog:ok', function( evt ) {
                 //确认后刷新
                 console.log('正在备份...')
-                //window.location.reload()
-                // finder.fire('Backup:getallfiles:success', ['a/b/1.jpg','a/2.jpg'])
                 finder.request( 'dialog:destroy' )
                 finder.request( 'loader:show', { text: '获取同步数据中...' } );
                 $.ajax({
@@ -147,7 +146,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
             
             finder.on('Backup:getallfiles:success', function(evt){
                 console.log('获取到的列表 '+evt.data)
-                var window._backup_cpfiles = evt.data || []
+                var cpfiles = evt.data || []
 
                 finder.request( 'dialog', {
                     name: 'BackupfileDialog',
@@ -157,23 +156,68 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                     buttons: [ 'ok', 'cancel' ]
                 } );
 
-                console.log(Backbone.VERSION)
-
-                //var i = 1;
-                //setInterval(function(){
-                //
-                //    //var cur = templateModel.get('progress');
-                //    //console.log('==>'+cur);
-                //    //templateModel.set('progress', cur+1)
-                //    $('.ckf-progress-bar')[0].style.width = (i++) + '%';
-                //},1000)
+                //console.log(Backbone.VERSION)
+                finder.fire('Backup:process', {cpfiles: cpfiles, index: 0})
             });
 
+            //备份处理
+            finder.on('Backup:process', function(evt){
+                var cpfiles = evt.data.cpfiles
+                var index = evt.data.index
 
+                $.ajax({
+                    url: '/ckfinder/core/connector/php/connector.php?command=Backupfile&cpfile='+encodeURIComponent(cpfiles[index]),
+                    type: 'GET',
+                    success: function(res){
+                        console.log(res)
+                        //成功发送请求
+                        if(res.status == 'ok'){
+                            //更新进度信息
 
+                            $('.backup-file').text(cpfiles[index]);
+                            $('.backup-finish').text(index+1);
+                            $('.backup-total').text(cpfiles.length);
+                            $('.ckf-progress-bar')[0].style.width = (index+1) + '%';
 
-            
-            
+                            if(index+1 < cpfiles.length){
+                                //未遍历完则继续
+                                finder.fire('Backup:process', {cpfiles: cpfiles, index: index+1})
+                            }else{
+                                finder.fire('Backup:process:finish', {cpfiles: cpfiles})
+                            }
+
+                        }else{
+                            //发生错误，提示
+                            finder.request( 'dialog:info', {
+                                name: 'NetworkErrorDialog',
+                                title: '提示',
+                                msg: res.msg,
+                                buttons: [ 'okClose' ]
+                            });
+                        }
+                    },
+                    error: function(){
+                        //网络错误
+                        finder.request( 'dialog:close:BackupfileDialog')
+                        finder.request( 'dialog:info', {
+                            name: 'NetworkErrorDialog',
+                            title: '提示',
+                            msg: '网络繁忙，请稍后再试!',
+                            buttons: [ 'okClose' ]
+                        });
+                    }
+                })
+            })
+
+            //备份操作完毕
+            finder.on('Backup:process:finish', function(evt){
+                finder.request( 'dialog:info', {
+                    name: 'BackupFinishDialog',
+                    title: '提示',
+                    msg: '备份完毕！',
+                    buttons: [ 'okClose' ]
+                });
+            })
 
         }
     };
