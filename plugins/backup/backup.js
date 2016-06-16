@@ -110,8 +110,8 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
             function appendBackupToolbar( evt){
                 if(isExistBackupFolder()){
                     evt.data.toolbar.push( {
-                        name: 'Feedback',
-                        label: 'Send Feedback',
+                        name: 'Backup',
+                        label: '一键备份',
                         priority: 0,
                         icon: 'onekeybackup',
                         action: function(){
