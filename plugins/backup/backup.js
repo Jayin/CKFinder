@@ -1,5 +1,8 @@
 ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
     "use strict";
+    
+    var DEBUG = false  //是否开启Debug信息输出
+    var Connectstatus_Interval = 8 * 1000 //轮询时间间隔
 
     var BackupPlugin = {
         init: function(finder) {
@@ -30,7 +33,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                                 
                                if(isExistBackupFolder()){
                                  // 如果文件夹已经显示了，又检测到后台有backup目录，则不需要提示
-                                 console.log('连接状态: 已连接')
+                                 if(DEBUG) console.log('连接状态: 已连接')
                                  return;
                                }
 
@@ -45,7 +48,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                                 
                                 if(isExistBackupFolder()){
                                     // 如果文件夹已经显示了，又检测到后台不存在backup目录，则提示连接断开
-                                    console.log('连接状态: 连接断开')
+                                    if(DEBUG) console.log('连接状态: 连接断开')
                                     finder.request( 'dialog:info', {
                                         name: 'CheckConnectStatusDialog',
                                         title: '提示',
@@ -56,50 +59,46 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                             }
                         },
                         error: function(){
-                            //http 请求错误，请检测网络
-                            console.log('请求失败')
+                            //http 请求错误，请检测网络/网管
+                            if(DEBUG) console.log('http 请求错误，请检测网络/网管')
                         }
 
                     })
                 }
 
-                //finder.request( 'loader:show', { text: '轮询中...' } );
-
                 //轮询检测是否存在移动存储目录
-                setInterval(check_connect_status.bind(this), 8000)
+                setInterval(check_connect_status.bind(this), Connectstatus_Interval)
 
                 //点击连接提示对话框
                 finder.on( 'dialog:CheckConnectStatusDialog:ok', function( evt ) {
                     //确认后刷新
-                    console.log('正在刷新...')
+                    if(DEBUG) console.log('正在刷新...')
                     window.location.reload()
                     finder.request( 'dialog:destroy' )
                 } );
             });
 
-
-            // => http://docs.cksource.com/ckfinder3/#!/api/CKFinder.Application-event-toolbar_reset_Main_resources
             finder.on( 'toolbar:reset:Main:resources', function( evt ) {
-                console.log('toolbar:reset:Main:resources')
+                if(DEBUG) console.log('toolbar:reset:Main:resources')
                 appendBackupToolbar(evt)
 
             }, this, null, 1000 );
             //选中文件夹时
             finder.on( 'toolbar:reset:Main:folder', function( evt ) {
-                console.log('toolbar:reset:Main:folder')
+                if(DEBUG) console.log('toolbar:reset:Main:folder')
                 appendBackupToolbar(evt)
 
             }, this, null, 1000 );
 
             //选中文件时的菜单选择
             finder.on( 'toolbar:reset:Main:file', function( evt ) {
-                console.log('toolbar:reset:Main:file')
+                if(DEBUG) console.log('toolbar:reset:Main:file')
                 appendBackupToolbar(evt)
 
             }, this, null, 1000 );
             // 选中多个文件时
             finder.on( 'toolbar:reset:Main:files', function( evt ) {
-                console.log('toolbar:reset:Main:files')
+                if(DEBUG) console.log('toolbar:reset:Main:files')
                 appendBackupToolbar(evt)
 
             }, this, null, 1000 );
@@ -130,7 +129,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
             // 确认一键备份对话框 点击确认
             finder.on( 'dialog:ConfirmOnekeybackupDialog:ok', function( evt ) {
                 //确认后刷新
-                console.log('正在备份...')
+                if(DEBUG) console.log('正在备份...')
                 finder.request( 'dialog:destroy' )
                 finder.request( 'loader:show', { text: '获取同步数据中...' } );
                 $.ajax({
@@ -145,7 +144,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
             } );
             
             finder.on('Backup:getallfiles:success', function(evt){
-                console.log('获取到的列表 '+evt.data)
+                if(DEBUG) console.log('获取到的列表 '+evt.data)
                 var cpfiles = evt.data || []
 
                 finder.request( 'dialog', {
@@ -156,7 +155,6 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                     buttons: [ 'ok', 'cancel' ]
                 } );
 
-                //console.log(Backbone.VERSION)
                 finder.fire('Backup:process', {cpfiles: cpfiles, index: 0})
             });
 
@@ -169,7 +167,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                     url: '/ckfinder/core/connector/php/connector.php?command=Backupfile&cpfile='+encodeURIComponent(cpfiles[index]),
                     type: 'GET',
                     success: function(res){
-                        console.log(res)
+                        if(DEBUG) console.log(res)
                         //成功发送请求
                         if(res.status == 'ok'){
                             //更新进度信息
