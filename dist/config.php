@@ -2,12 +2,19 @@
 
 
 // Production
-// error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
-// ini_set('display_errors', 0);
+ error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+ ini_set('display_errors', 0);
 
 // Development
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+
+//外接设备挂载目录
+define('EXTERNAL_FOLDER', '/mnt/sdb1');
+//备份的目录文件名名
+define('BACKUP_DIRECTORY', 'joinca_backup');
+//备份目录
+define('BACKUP_FOLDER', EXTERNAL_FOLDER.'/'.BACKUP_DIRECTORY.'/'); //注意必须以/结尾
 
 /*============================ General Settings =======================================*/
 
@@ -26,10 +33,10 @@ $config['licenseKey']  = 'S9C9-YHBK-41YE-V5MY-RA5J-Q52N-SJCK';
 /*============================  Internal Directory ============================*/
 $config['privateDir'] = array(
     'backend' => 'default',
-    'tags'   => 'zkuploader/tags',
-    'logs'   => 'zkuploader/logs',
-    'cache'  => 'zkuploader/cache',
-    'thumbs' => 'zkuploader/cache/thumbs',
+    'tags'   => '.zkuploader/tags', //使用 .zkuploader 文件夹来隐藏文件夹 ,
+    'logs'   => '.zkuploader/logs',
+    'cache'  => '.zkuploader/cache',
+    'thumbs' => '.zkuploader/cache/thumbs',
 );
 
 /*============================ Images and Thumbnails ==================================*/
@@ -51,7 +58,18 @@ $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
     'baseUrl'      => '/zkuploader/userfiles/',
-     'root'         => '', // Can be used to explicitly set the user files directory.
+     'root'         => __DIR__.'/zkuploader/userfiles/',//当前目录下，//注意必须以/结尾 // Can be used to explicitly set the user files directory.
+    'chmodFiles'   => 0777,
+    'chmodFolders' => 0755,
+    'filesystemEncoding' => 'UTF-8',
+);
+
+//外置存储
+$config['backends'][] = array(
+    'name'         => 'backup',
+    'adapter'      => 'local',
+    'baseUrl'      => '/',
+    'root'         => EXTERNAL_FOLDER, // Can be used to explicitly set the user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
@@ -78,6 +96,20 @@ $config['resourceTypes'][] = array(
     'deniedExtensions'  => '',
     'backend'           => 'default'
 );
+
+//外置存储
+if(file_exists(EXTERNAL_FOLDER)){  //
+    $config['resourceTypes'][] = array(
+        'name'              => '移动存储', //请不要随意修改，受影响的文件有：plugins/backup/backup.js
+        'directory'         => BACKUP_DIRECTORY,
+        'maxSize'           => 0,
+        'allowedExtensions' => '',
+        'deniedExtensions'  => '',
+        'backend'           => 'backup'
+    );
+}
+
+
 
 /*================================ Access Control =====================================*/
 
@@ -120,7 +152,9 @@ $config['debug'] = false;
 
 /*==================================== Plugins ========================================*/
 $config['pluginsDirectory'] = __DIR__ . '/plugins';
-$config['plugins'] = array();
+$config['plugins'] = array(
+    'Connectstatus', 'Backupfile', 'Getallfiles'
+);
 
 /*================================ Cache settings =====================================*/
 $config['cache'] = array(

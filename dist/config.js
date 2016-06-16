@@ -9,6 +9,6 @@ var config = {};
 config.language = 'zh-cn';
 config.skin = 'ztb';
 config.plugins = [
-  'ztb'
+  'ztb','backup'
 ];
 ZKUploader.define( config );
