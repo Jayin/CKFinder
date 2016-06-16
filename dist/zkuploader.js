@@ -2109,7 +2109,7 @@ var ZKUploader = function() {
                                 d = "__p += '",
                                 f = Cn((n.escape || T).source + "|" + c.source + "|" + (c === M ? E : T).source + "|" + (n.evaluate || T).source + '|$', "g");
                             e.replace(f, function(t, n, i, o, a, l) {
-                                return i || (i = o), d += e.slice(u, l).replace(P, s), n && (d += '' +__e(' + n + ') +''), a && (r = !0, d += "';" + a + ";__p += '"), i && (d += '' +((__t = (' + i + ')) == null ? '' : __t) +''), u = l + t.length, t
+                                return i || (i = o), d += e.slice(u, l).replace(P, s), n && (d += '' +__e(' + n + ') +''), a && (r = !0, d += "';" + a + ";__p += '"), i && (d += "' +((__t = (" + i + ")) == null ? '' : __t) +'"), u = l + t.length, t
                             }), d += "';";
                             var p = n.variable,
                                 m = p;
