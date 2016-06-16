@@ -96,8 +96,11 @@ $config['licenseKey']  = '';
 
 ```
 
-## 6.15新增备份
+## 新增备份
 
+> **注意**： 请保证服务器有对移动存储设备的读写权限
+
+- 默认的CKfinder映射在`config.php`这一层目录下的`zkuploader`
 - 一键备份文件时会忽略以`.`开头的文件，例如：`.zkuploader`
 - 轮询移动设备是否挂载在/mnt/sdb1的时间间隔为8秒，在`plugins/backup/backup.js`中配置Connectstatus_Interval
 - 挂载目录相关配置：根目录下的`config.php`
