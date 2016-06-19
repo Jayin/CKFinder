@@ -15,6 +15,7 @@ define('EXTERNAL_FOLDER', '/mnt/sdb1');
 define('BACKUP_DIRECTORY', 'joinca_backup');
 //备份目录
 define('BACKUP_FOLDER', EXTERNAL_FOLDER.'/'.BACKUP_DIRECTORY.'/'); //注意必须以/结尾
+define('PRIVATE_DIR','zkuploader'); //私有目录，不会被备份
 
 /*============================ General Settings =======================================*/
 
@@ -33,10 +34,10 @@ $config['licenseKey']  = 'S9C9-YHBK-41YE-V5MY-RA5J-Q52N-SJCK';
 /*============================  Internal Directory ============================*/
 $config['privateDir'] = array(
     'backend' => 'default',
-    'tags'   => '.zkuploader/tags', //使用 .zkuploader 文件夹来隐藏文件夹 ,
-    'logs'   => '.zkuploader/logs',
-    'cache'  => '.zkuploader/cache',
-    'thumbs' => '.zkuploader/cache/thumbs',
+    'tags'   => PRIVATE_DIR.'/tags', //PRIVATE_DIR.(zkuploader) 目录不会被备份
+    'logs'   => PRIVATE_DIR.'/logs',
+    'cache'  => PRIVATE_DIR.'/cache',
+    'thumbs' => PRIVATE_DIR.'/cache/thumbs',
 );
 
 /*============================ Images and Thumbnails ==================================*/
@@ -59,7 +60,7 @@ $config['backends'][] = array(
     'adapter'      => 'local',
     'baseUrl'      => '/zkuploader/userfiles/',
      'root'         => __DIR__.'/zkuploader/userfiles/',//当前目录下，//注意必须以/结尾 // Can be used to explicitly set the user files directory.
-    'chmodFiles'   => 0777,
+    'chmodFiles'   => 0644,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
 );
@@ -70,7 +71,7 @@ $config['backends'][] = array(
     'adapter'      => 'local',
     'baseUrl'      => '/',
     'root'         => EXTERNAL_FOLDER, // Can be used to explicitly set the user files directory.
-    'chmodFiles'   => 0777,
+    'chmodFiles'   => 0644,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
 );
@@ -83,19 +84,20 @@ $config['resourceTypes'][] = array(
     'name'              => '文件', // Single quotes not allowed.
     'directory'         => 'files',
     'maxSize'           => 0,
-    'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
-    'deniedExtensions'  => '',
+    'allowedExtensions' => '',
+    'deniedExtensions'  => 'php,sh',
     'backend'           => 'default'
 );
 
-$config['resourceTypes'][] = array(
-    'name'              => '图片',
-    'directory'         => 'images',
-    'maxSize'           => 0,
-    'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
-    'deniedExtensions'  => '',
-    'backend'           => 'default'
-);
+
+//$config['resourceTypes'][] = array(
+//    'name'              => '图片',
+//    'directory'         => 'images',
+//    'maxSize'           => 0,
+//    'allowedExtensions' => '',
+//    'deniedExtensions'  => 'php,sh',
+//    'backend'           => 'default'
+//);
 
 //外置存储
 if(file_exists(EXTERNAL_FOLDER)){  //
@@ -104,7 +106,7 @@ if(file_exists(EXTERNAL_FOLDER)){  //
         'directory'         => BACKUP_DIRECTORY,
         'maxSize'           => 0,
         'allowedExtensions' => '',
-        'deniedExtensions'  => '',
+        'deniedExtensions'  => 'php,sh',
         'backend'           => 'backup'
     );
 }
