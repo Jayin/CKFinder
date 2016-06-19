@@ -68,7 +68,7 @@ class Getallfiles extends CommandAbstract implements PluginInterface{
 
         while (sizeof($directories)) {
             $dir  = array_pop($directories);
-            if(strpos(basename($dir), '.') === 0) continue; // 当文件夹以.开头，默认忽略
+            if(basename($dir) === PRIVATE_DIR) continue; // 当默认忽略 zkuploader文件（PRIVATE_DIR默认值为zkuploader文件）
 
             if ($handle = opendir($dir)) {
                 while (false !== ($file = readdir($handle))) {
