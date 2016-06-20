@@ -24,7 +24,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                 function check_connect_status(){
                     // 请求
                     $.ajax({
-                        url: '/ckfinder/core/connector/php/connector.php?command=Connectstatus',
+                        url: 'core/connector/php/connector.php?command=Connectstatus',
                         type: 'GET',
 
                         success: function(res){
@@ -133,7 +133,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                 finder.request( 'dialog:destroy' )
                 finder.request( 'loader:show', { text: '获取同步数据中...' } );
                 $.ajax({
-                  url: '/ckfinder/core/connector/php/connector.php?command=Getallfiles',
+                  url: 'core/connector/php/connector.php?command=Getallfiles',
                   type: 'GET',
                   success: function(res){
                     finder.fire('Backup:getallfiles:success', res)
@@ -164,7 +164,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                 var index = evt.data.index
 
                 $.ajax({
-                    url: '/ckfinder/core/connector/php/connector.php?command=Backupfile&cpfile='+encodeURIComponent(cpfiles[index]),
+                    url: 'core/connector/php/connector.php?command=Backupfile&cpfile='+encodeURIComponent(cpfiles[index]),
                     type: 'GET',
                     success: function(res){
                         if(DEBUG) console.log(res)
