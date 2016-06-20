@@ -59,7 +59,7 @@ ZKUploader.define(function() {
       
       //选中文件时的菜单选择
       finder.on( 'toolbar:reset:Main:file', function( evt ) {
-            updateToolbar(evt, ['Upload', 'View', 'Download', 'EditImage', 'RenameFile', 'MoveFiles', 'DeleteFiles'])
+            updateToolbar(evt, ['Upload', 'View', 'Download', 'EditImage', 'CopyFiles', 'RenameFile', 'MoveFiles', 'DeleteFiles'])
             // console.log('toolbar:reset:Main:file')
             
         }, this, null, 1000 );
