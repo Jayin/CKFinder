@@ -84,13 +84,18 @@ ZKUploader.define(function() {
               button.set('className', 'tollbar-item-margin')
               
               // console.log(button.get( 'name' ))
-              button.set('hidden', true)
+              //button.set('hidden', true)
+               //modified by jwj
+               button.set("className", "hide")
+               
               // if ( button.get('name') == 'ShowFolders' || button.get('name') == 'Upload' || button.get('name') == 'View' || button.get('name') == 'Download' || button.get('name') == 'RenameFile' || button.get('name') == 'DeleteFiles') {
               //     button.set('hidden', false)
                   
               // }
               if(showToobarItems.indexOf(button.get('name')) !== -1){
-                 button.set('hidden', false)
+                 //button.set('hidden', false)
+                 //modified by jwj
+                 button.unset("className", "hide")
               }
               toUpdate.push( button );
             } );
