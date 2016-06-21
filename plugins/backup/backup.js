@@ -11,7 +11,8 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
             function isExistBackupFolder(){
                 var folders = $('a[role=treeitem]');
                 for(var index=0; index<folders.length;index++){
-                    if(folders[index].text == '移动存储'){
+                    //检测左侧栏是否存在
+                    if(folders[index].text == 'USB'){
                         return true
                     }
                 }
