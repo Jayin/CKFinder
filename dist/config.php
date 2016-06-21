@@ -81,7 +81,7 @@ $config['backends'][] = array(
 $config['defaultResourceTypes'] = '';
 
 $config['resourceTypes'][] = array(
-    'name'              => '文件', // Single quotes not allowed.
+    'name'              => 'HDD', // Single quotes not allowed.
     'directory'         => 'files',
     'maxSize'           => 0,
     'allowedExtensions' => '',
@@ -102,7 +102,7 @@ $config['resourceTypes'][] = array(
 //外置存储
 if(file_exists(EXTERNAL_FOLDER)){  //
     $config['resourceTypes'][] = array(
-        'name'              => '移动存储', //请不要随意修改，受影响的文件有：plugins/backup/backup.js
+        'name'              => 'USB', //请不要随意修改，受影响的文件有：plugins/backup/backup.js
         'directory'         => BACKUP_DIRECTORY,
         'maxSize'           => 0,
         'allowedExtensions' => '',
