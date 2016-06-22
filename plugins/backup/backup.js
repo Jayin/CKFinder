@@ -2,7 +2,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
     "use strict";
     
     var DEBUG = false  //是否开启Debug信息输出
-    var Connectstatus_Interval = 8 * 1000 //轮询时间间隔
+    var Connectstatus_Interval = 12 * 1000 //轮询时间间隔
 
     var BackupPlugin = {
         init: function(finder) {
