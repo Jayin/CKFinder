@@ -176,7 +176,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                             $('.backup-file').text(cpfiles[index]);
                             $('.backup-finish').text(index+1);
                             $('.backup-total').text(cpfiles.length);
-                            $('.ckf-progress-bar')[0].style.width = (index+1) + '%';
+                            $('.ckf-progress-bar')[0].style.width = (index+1)/cpfiles.length*100 + '%';
 
                             if(index+1 < cpfiles.length){
                                 //未遍历完则继续
