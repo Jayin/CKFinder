@@ -152,7 +152,7 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                 finder.request( 'dialog', {
                     name: 'BackupfileDialog',
                     title: '提示',
-                    template: '<div data-role="navbar" class="ckf-upload-dropzone ui-body-a ui-navbar" tabindex="20" role="navigation" style="border: 0;"><div class="ui-content"><div class="ckf-upload-dropzone-grid"><div class="ckf-upload-dropzone-grid-a"><p id="ckf-label-301" class="ckf-upload-status">正在上传:<span class="backup-file">foo.jpg</span></p><p class="ckf-upload-progress-text" style=""><span class="ckf-upload-progress-text-files">已上传文件：<span class="backup-finish">11</span>/<span class="backup-total">20</span></span></p></div></div><div id="ckf-upload-progress"><div class="ckf-progress"><div class="ckf-progress-message ckf-hidden"></div><div class="ckf-progress-wrap ckf-progress-ok" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><div class="ckf-progress-bar backup-progress" style="width: 0%;"></div></div></div></div></div></div>',
+                    template: '<div data-role="navbar" class="ckf-upload-dropzone ui-body-a ui-navbar dialog-backup" tabindex="20" role="navigation" style="border: 0;"><div class="ui-content"><div class="ckf-upload-dropzone-grid"><div class="ckf-upload-dropzone-grid-a"><p id="ckf-label-301" class="ckf-upload-status">正在上传:<span class="backup-file">foo.jpg</span></p><p class="ckf-upload-progress-text" style=""><span class="ckf-upload-progress-text-files">已上传文件：<span class="backup-finish">11</span>/<span class="backup-total">20</span></span></p></div></div><div id="ckf-upload-progress"><div class="ckf-progress"><div class="ckf-progress-message ckf-hidden"></div><div class="ckf-progress-wrap ckf-progress-ok" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><div class="ckf-progress-bar backup-progress" style="width: 0%;"></div></div></div></div></div></div>',
                     //templateModel: templateModel,
                     buttons: [ 'ok', 'cancel' ]
                 } );
@@ -174,10 +174,10 @@ ZKUploader.define([ 'jquery', 'backbone' ],function($, Backbone) {
                         if(res.status == 'ok'){
                             //更新进度信息
 
-                            $('.backup-file').text(cpfiles[index]);
-                            $('.backup-finish').text(index+1);
-                            $('.backup-total').text(cpfiles.length);
-                            $('.ckf-progress-bar')[0].style.width = (index+1)/cpfiles.length*100 + '%';
+                            $('.dialog-backup .backup-file').text(cpfiles[index]);
+                            $('.dialog-backup .backup-finish').text(index+1);
+                            $('.dialog-backup .backup-total').text(cpfiles.length);
+                            $('.dialog-backup .ckf-progress-bar')[0].style.width = (index+1)/cpfiles.length*100 + '%';
 
                             if(index+1 < cpfiles.length){
                                 //未遍历完则继续
