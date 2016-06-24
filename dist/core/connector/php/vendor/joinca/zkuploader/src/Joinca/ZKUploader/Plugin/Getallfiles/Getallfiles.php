@@ -39,8 +39,9 @@ class Getallfiles extends CommandAbstract implements PluginInterface{
         $default = $backends['default']; //默认配置
         $root = $default['root'];
 
-        $result = self::read_all_files($root);
-        $files = self::compress_file_path($result['files'], $root);
+        // xxxx/userfiles/files
+        $result = self::read_all_files($root.HDD_DIRECTORY);
+        $files = self::compress_file_path($result['files'], $root.HDD_DIRECTORY);
 
         return count($files) > 0 ? $files : [];
     }

@@ -17,6 +17,9 @@ define('BACKUP_DIRECTORY', 'joinca_backup');
 define('BACKUP_FOLDER', EXTERNAL_FOLDER.'/'.BACKUP_DIRECTORY.'/'); //注意必须以/结尾
 define('PRIVATE_DIR','zkuploader'); //私有目录，不会被备份
 
+//本地硬盘的文件目录
+define('HDD_DIRECTORY', 'files');
+
 /*============================ General Settings =======================================*/
 
 $config = array();
@@ -82,7 +85,7 @@ $config['defaultResourceTypes'] = '';
 
 $config['resourceTypes'][] = array(
     'name'              => 'HDD', // Single quotes not allowed.
-    'directory'         => 'files',
+    'directory'         => HDD_DIRECTORY,
     'maxSize'           => 0,
     'allowedExtensions' => '',
     'deniedExtensions'  => 'php,sh',

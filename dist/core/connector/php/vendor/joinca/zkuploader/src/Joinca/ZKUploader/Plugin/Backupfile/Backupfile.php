@@ -45,17 +45,18 @@ class Backupfile extends CommandAbstract implements PluginInterface{
             return array('status' => 'faild', 'msg' => '移动存储设备未连接');
         }
 
-        if(!file_exists($default_root.$cpfile)){
+        if(!file_exists($default_root.HDD_DIRECTORY.$cpfile)){
             return array('status' => 'faild', 'msg' => $cpfile.'文件不存在');
         }
 
         //创建复制目录
         @mkdir(dirname(BACKUP_FOLDER.$cpfile), $backup['chmodFiles'], true);
 
-        if(copy($default_root.$cpfile, BACKUP_FOLDER.$cpfile)){
-            return array('status' => 'ok', 'msg' => '复制成功');
+        if(copy($default_root.HDD_DIRECTORY.$cpfile, BACKUP_FOLDER.$cpfile)){
+            return array('status' => 'ok', 'msg' => $cpfile.'文件备份成功');
         }else{
-            return array('status' => 'faild', 'msg' => '复制失败，设备断开或设备容量已满!');
+            //设备断开，设备容量已满 用户权限
+            return array('status' => 'faild', 'msg' => '备份出现错误，请重试!');
         }
     }
 
