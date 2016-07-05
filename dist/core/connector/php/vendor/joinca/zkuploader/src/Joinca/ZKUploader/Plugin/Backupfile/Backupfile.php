@@ -50,9 +50,10 @@ class Backupfile extends CommandAbstract implements PluginInterface{
         }
 
         //创建复制目录
-        @mkdir(dirname(BACKUP_FOLDER.$cpfile), $backup['chmodFiles'], true);
+        @mkdir(dirname(BACKUP_FOLDER.$cpfile), $backup['chmodFolders'], true);
 
         if(copy($default_root.HDD_DIRECTORY.$cpfile, BACKUP_FOLDER.$cpfile)){
+            chmod(BACKUP_FOLDER.$cpfile, $backup['chmodFiles']);
             return array('status' => 'ok', 'msg' => $cpfile.'文件备份成功');
         }else{
             //设备断开，设备容量已满 用户权限
