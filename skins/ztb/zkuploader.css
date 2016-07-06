@@ -260,7 +260,22 @@ to {
 
 .ui-body-a {
 	border-width: 1px;
-	border-style: solid
+	border-style: solid;
+}
+
+.ui-popup-container.ui-popup-active .ui-popup.ui-body-a.ui-overlay-shadow.ui-corner-all
+{
+	background-color: transparent;
+}
+
+.ui-popup-container.ui-dialog-popup.ui-popup-active .ui-popup.ui-body-a.ui-overlay-shadow.ui-corner-all
+{
+	background-color: #fff;
+}
+
+html .ckf-contextmenu.ui-popup.ui-body-a.ui-overlay-shadow.ui-corner-all>.ui-listview>li>a.ui-btn:after,
+.ui-popup-container.ui-popup-active .ckf-contextmenu.ui-popup.ui-body-a.ui-overlay-shadow.ui-corner-all{
+	/*background-color: transparent;*/
 }
 
 .ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a
@@ -403,9 +418,10 @@ html .ckf-contextmenu>.ui-listview>li>a.ui-btn:after {
 	bottom: 0;
 	width: 32px;
 	height: auto;
-	background-color: #e0e1e0;
 	margin: 0;
-	z-index: 1000
+	z-index: 1000;
+/*	background-color: #e0e1e0;*/
+	background-color: #595757;
 }
 
 html .ckf-contextmenu>.ui-listview>li>a.ui-btn.ui-btn-icon-left:after {
@@ -434,7 +450,7 @@ html .ckf-contextmenu>.ui-listview>li>a.ui-btn.ui-btn-icon-right:focus:after
 }
 
 html .ckf-contextmenu>.ui-listview>li>a.ui-btn:focus:after, html .ckf-contextmenu>.ui-listview>li>a.ui-btn:hover:after
-	{
+{
 	background-color: #d8dad8
 }
 
@@ -674,11 +690,31 @@ label.ckf-choose-resized-image-label {
 }
 
 .ckf-page .ckf-toolbar .ui-btn-icon-notext:after {
-	zoom: 1.8 !important
+/*	-moz-transform: scale(1.6);
+    zoom: 1.6 !important; */
+    background-size: 80% 80%;
+	background-position: center center;
+	top: 0px;
+	width: 30px;
+	height: 30px;
+	margin-top: 0;
+	margin-left: 0;
+	left: 0px;
 }
 
+.ckf-page .ckf-toolbar .ui-icon-ckf-settings.ui-btn-icon-notext:after {
+	margin-left: 2px;
+}	
+
 .ckf-panel-scrollable .ckf-toolbar-items .ui-btn-icon-notext:after {
-	zoom: 1.6 !important
+    background-size: 80% 80%;
+	background-position: center center;
+	top: 0px;
+	width: 30px;
+	height: 30px;
+	margin-top: 0;
+	margin-left: 0;
+	left: 0px;
 }
 
 .ui-btn-icon-notext, .ui-footer button.ui-btn.ui-btn-icon-notext,
@@ -763,9 +799,12 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 	background-color: #38a2ec !important
 }
 
+.ckf-files-page .ckf-toolbar {
+	top: auto !important;
+}	
 .ckf-page.ckf-files-page .ui-header.ckf-toolbar {
-	bottom: 0;
-	top: initial
+	bottom: 0 !important;
+	position: absolute !important;
 }
 
 .ckf-page.ckf-files-page.ui-page.ui-page-theme-a {
@@ -788,4 +827,16 @@ button.ckf-toolbar-item.ckf-toolbar-button.ckf-toolbar-item-focusable.ui-btn.ui-
 
 .hide {
 	display: none !important
+}
+
+button.ckf-toolbar-item.ui-btn-icon-notext{
+	margin-right: 1.3em;
+}
+
+div.ui-popup-container>div:not(.ckf-contextmenu) ul.ui-listview li a{
+    background-color: rgba(20, 20, 20, 0.6) !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 }
